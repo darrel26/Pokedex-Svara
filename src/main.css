@@ -224,11 +224,18 @@ body {
   margin: 25px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .nav-bar h1 {
+  display: flex;
   font-size: 25px;
+  margin: 0;
+}
+
+.icon-back {
+  font-size: 24px;
+  padding-right: 35px;
 }
 
 .search-bar.home [type="text"] {
@@ -314,7 +321,6 @@ body {
 
 .empty-data {
   height: 100vh;
-  font-size: 48px;
   color: #fff;
   display: flex;
   justify-content: center;

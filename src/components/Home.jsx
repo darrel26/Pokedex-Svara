@@ -14,6 +14,8 @@ import SearchBar from "./SearchBar";
 import LoadingAnimation from "./LoadingAnimation";
 import DetailsModal from "./DetailsModal";
 import DetailsContainer from "./DetailsContainer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -63,7 +65,9 @@ export default function Home() {
         <div className="left-container mw-1024">
           <div className="nav-bar">
             <h1>Pokédex</h1>
-            <Link to={"/profile"}>GO!</Link>
+            <Link to={"/profile"} style={{ margin: 0 }}>
+              <FontAwesomeIcon icon={faCircleUser} size="3x" color="#fff" />
+            </Link>
           </div>
           <SearchBar />
           <ul className="filter-container">
