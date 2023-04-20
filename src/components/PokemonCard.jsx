@@ -40,7 +40,7 @@ export default function PokemonCard({ pokemonName, pokemonUrl }) {
         alt={pokemonName}
       />
       <h3 id={pokemonName}>{pokemonName}</h3>
-      {location === "/profile" ? (
+      {location === "/Pokedex-Svara/profile" ? (
         <div
           className="cover-card"
           onClick={(e) =>
