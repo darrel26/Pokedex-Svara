@@ -76,7 +76,9 @@ export default function Home() {
                 id="region"
                 name="Region"
                 className="dropdown region-dropdown"
-                onChange={(e) => navigate(`/pokedex/${e.target.value}`)}
+                onChange={(e) =>
+                  navigate(`/Pokedex-Svara/pokedex/${e.target.value}`)
+                }
                 defaultValue="Region"
               >
                 <option value="Region">Region</option>
@@ -92,7 +94,9 @@ export default function Home() {
                 id="type"
                 name="Types"
                 className="dropdown types-dropdown"
-                onChange={(e) => navigate(`/type/${e.target.value}`)}
+                onChange={(e) =>
+                  navigate(`/Pokedex-Svara/type/${e.target.value}`)
+                }
                 defaultValue="Types"
               >
                 <option value="Types">Types</option>
