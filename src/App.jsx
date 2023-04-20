@@ -15,15 +15,15 @@ export default function App() {
 
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: "/Pokedex-Svara/",
       element: <Home />,
     },
     {
-      path: "/:based/:filter",
+      path: "/Pokedex-Svara/:based/:filter",
       element: <FilteredPokemon />,
     },
     {
-      path: "/profile",
+      path: "/Pokedex-Svara/profile",
       element: <SavedPokemon />,
     },
   ]);

@@ -12,7 +12,7 @@ export default function SavedPokemon() {
     return (
       <div className="empty-data">
         <Link
-          to={"/"}
+          to={"/Pokedex-Svara"}
           style={{ textDecoration: "none", fontSize: "48px", color: "#fff" }}
         >
           No Data
@@ -26,7 +26,10 @@ export default function SavedPokemon() {
       <div className="nav-bar">
         <h1>
           <span>
-            <Link to={"/"} style={{ textDecoration: "none", color: "#fff" }}>
+            <Link
+              to={"/Pokedex-Svara"}
+              style={{ textDecoration: "none", color: "#fff" }}
+            >
               <FontAwesomeIcon icon={faBackward} className="icon-back" />
             </Link>
           </span>

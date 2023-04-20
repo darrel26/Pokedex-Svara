@@ -37,7 +37,7 @@ export default function FilteredPokemon() {
         <div className="left-container mw-1024">
           <div className="nav-bar">
             <Link
-              to={"/"}
+              to={"/Pokedex-Svara"}
               style={{ textDecoration: "none", color: "#fff" }}
               onClick={() => setSearchKeyword("")}
             >

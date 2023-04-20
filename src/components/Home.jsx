@@ -65,7 +65,7 @@ export default function Home() {
         <div className="left-container mw-1024">
           <div className="nav-bar">
             <h1>Pokédex</h1>
-            <Link to={"/profile"} style={{ margin: 0 }}>
+            <Link to={"/Pokedex-Svara/profile"} style={{ margin: 0 }}>
               <FontAwesomeIcon icon={faCircleUser} size="3x" color="#fff" />
             </Link>
           </div>
