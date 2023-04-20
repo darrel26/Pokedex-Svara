@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { PokemonContext } from "../context/pokemonContext";
+import { PokemonContext } from "../main";
 import LoadingAnimation from "./LoadingAnimation";
 
 export default function DetailsModal() {
@@ -12,7 +12,11 @@ export default function DetailsModal() {
     <div
       className="modal-container"
       onClick={() => setShowModal(false)}
-      style={{ display: showModal ? "block" : "none" }}
+      style={{
+        "@media (maxWidth: 768px)": {
+          display: showModal ? "block" : "none",
+        },
+      }}
     >
       <div className="modal-body">
         <img

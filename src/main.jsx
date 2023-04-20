@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
+import { createContext } from "react";
 import "./main.css";
 import App from "./App";
 
@@ -13,6 +13,8 @@ const queryClient = new QueryClient({
     },
   },
 });
+
+export const PokemonContext = createContext([]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <QueryClientProvider client={queryClient}>

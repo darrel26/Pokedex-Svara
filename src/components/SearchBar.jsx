@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { PokemonContext } from "../context/pokemonContext";
+import { PokemonContext } from "../main";
 
 export default function SearchBar() {
   const { setSearchKeyword } = useContext(PokemonContext);

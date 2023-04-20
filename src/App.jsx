@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home";
 import FilteredPokemon from "./components/FilteredPokemon";
-import { PokemonContext } from "./context/pokemonContext";
+import { PokemonContext } from "./main";
+import SavedPokemon from "./components/SavedPokemon";
 
 export default function App() {
+  const [savedPokemon, setSavedPokemon] = useState([]);
+
   const [pokemonData, setPokemonData] = useState([]);
   const [searchKeyword, setSearchKeyword] = useState("");
-  const [pokemonDetails, setPokemonDetails] = useState({});
+  const [pokemonDetails, setPokemonDetails] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
   const router = createBrowserRouter([
@@ -19,10 +22,16 @@ export default function App() {
       path: "/:based/:filter",
       element: <FilteredPokemon />,
     },
+    {
+      path: "/profile",
+      element: <SavedPokemon />,
+    },
   ]);
   return (
     <PokemonContext.Provider
       value={{
+        savedPokemon,
+        setSavedPokemon,
         pokemonData,
         setPokemonData,
         searchKeyword,
