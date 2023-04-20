@@ -22,6 +22,14 @@ body {
   color: #b3aeae;
 }
 
+.lds-ring.modal {
+  background-color: #000;
+  height: 100vh;
+  width: 100vw;
+  z-index: 99;
+  display: flex;
+}
+
 .lds-ring div {
   box-sizing: border-box;
   display: block;
@@ -54,6 +62,154 @@ body {
 
 /* source https://loading.io/css/ */
 
+.modal-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding-top: 0;
+  margin-top: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+}
+
+.modal-body {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 50vh auto 0;
+  transform: translateY(-50%);
+  width: 85%;
+  height: 50%;
+  align-items: center;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.modal-body h1 {
+  font-size: 16px;
+}
+
+.modal-body img {
+  height: 150px;
+  width: 150px;
+  margin-bottom: 30px;
+}
+
+.pokemon-type {
+  list-style: none;
+  display: flex;
+  width: 250px;
+  flex-flow: wrap row;
+  gap: 5px;
+  justify-content: center;
+  padding: 20px 0 25px 0;
+}
+
+.pokemon-type li {
+  margin: 0;
+  width: auto;
+  padding: 7px;
+  background-color: yellowgreen;
+  border-radius: 5px;
+}
+
+/* Pokemon Type Color */
+
+#normal {
+  background-color: #a8a77a;
+}
+
+#fire {
+  background-color: #ee8130;
+}
+
+#water {
+  background-color: #6390f0;
+  color: #fff;
+}
+
+#electric {
+  background-color: #f7d02c;
+}
+
+#grass {
+  background-color: #7ac74c;
+}
+
+#ice {
+  background-color: #96d9d6;
+}
+
+#fighting {
+  background-color: #c22e28;
+  color: #fff;
+}
+
+#poison {
+  background-color: #a33ea1;
+  color: #fff;
+}
+
+#ground {
+  background-color: #e2bf65;
+}
+
+#flying {
+  background-color: #a98ff3;
+}
+
+#psychic {
+  background-color: #f95587;
+}
+
+#bug {
+  background-color: #a6b91a;
+}
+
+#rock {
+  background-color: #b6a136;
+}
+
+#ghost {
+  background-color: #735797;
+}
+
+#dragon {
+  background-color: #6f35fc;
+  color: #fff;
+}
+
+#dark {
+  background-color: #705746;
+  color: #fff;
+}
+
+#steel {
+  background-color: #b7b7ce;
+}
+
+#fairy {
+  background-color: #d685ad;
+}
+
+.modal-body table {
+  font-size: 10px;
+  text-align: left;
+  border-spacing: 15px;
+}
+
+.modal-body th {
+  border-spacing: 10px;
+}
 .nav-bar {
   color: #fff;
   margin: 25px;

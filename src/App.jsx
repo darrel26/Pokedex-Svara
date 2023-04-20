@@ -7,6 +7,8 @@ import { PokemonContext } from "./context/pokemonContext";
 export default function App() {
   const [pokemonData, setPokemonData] = useState([]);
   const [searchKeyword, setSearchKeyword] = useState("");
+  const [pokemonDetails, setPokemonDetails] = useState({});
+  const [showModal, setShowModal] = useState(false);
 
   const router = createBrowserRouter([
     {
@@ -20,7 +22,16 @@ export default function App() {
   ]);
   return (
     <PokemonContext.Provider
-      value={{ pokemonData, setPokemonData, searchKeyword, setSearchKeyword }}
+      value={{
+        pokemonData,
+        setPokemonData,
+        searchKeyword,
+        setSearchKeyword,
+        pokemonDetails,
+        setPokemonDetails,
+        showModal,
+        setShowModal,
+      }}
     >
       <RouterProvider router={router}></RouterProvider>
     </PokemonContext.Provider>

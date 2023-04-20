@@ -10,11 +10,19 @@ import { useNavigate } from "react-router-dom";
 import { PokemonContext } from "../context/pokemonContext";
 import PokemonCard from "./PokemonCard";
 import SearchBar from "./SearchBar";
+import LoadingAnimation from "./LoadingAnimation";
+import DetailsModal from "./DetailsModal";
 
 export default function Home() {
   const navigate = useNavigate();
-  const { pokemonData, setPokemonData, searchKeyword } =
-    useContext(PokemonContext);
+  const {
+    pokemonData,
+    setPokemonData,
+    searchKeyword,
+    showModal,
+    setShowModal,
+    pokemonDetails,
+  } = useContext(PokemonContext);
 
   const pokemonRequests = useQueries({
     queries: [
@@ -41,7 +49,7 @@ export default function Home() {
   });
 
   if (pokemonRequests.some((response) => response.isLoading)) {
-    return <div className="home-spinner">Loading...</div>;
+    return <LoadingAnimation />;
   }
 
   const pokemonRegion = pokemonRequests[2].data.results;
@@ -49,6 +57,7 @@ export default function Home() {
 
   return (
     <>
+      {showModal === true ? <DetailsModal /> : ""}
       <div className="nav-bar">
         <h1>Pokédex</h1>
       </div>
@@ -60,7 +69,9 @@ export default function Home() {
             name="Region"
             className="dropdown region-dropdown"
             onChange={(e) => navigate(`/pokedex/${e.target.value}`)}
+            defaultValue="Region"
           >
+            <option value="Region">Region</option>
             {pokemonRegion.map((region) => (
               <option value={region.name} key={region.name}>
                 {region.name}
@@ -74,7 +85,9 @@ export default function Home() {
             name="Types"
             className="dropdown types-dropdown"
             onChange={(e) => navigate(`/type/${e.target.value}`)}
+            defaultValue="Types"
           >
+            <option value="Types">Types</option>
             {pokemonTypes.map((type) => (
               <option value={type.name} key={type.name}>
                 {type.name}

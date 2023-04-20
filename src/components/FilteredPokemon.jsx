@@ -5,9 +5,12 @@ import { getPokedexRegionData, getPokemonTypesData } from "../utils/queries";
 import { PokemonContext } from "../context/pokemonContext";
 import SearchBar from "./SearchBar";
 import PokemonCard from "./PokemonCard";
+import LoadingAnimation from "./LoadingAnimation";
+import DetailsModal from "./DetailsModal";
 
 export default function FilteredPokemon() {
-  const { searchKeyword } = useContext(PokemonContext);
+  const { setSearchKeyword, searchKeyword, showModal } =
+    useContext(PokemonContext);
   const location = useLocation();
   const filterType = location.pathname.split("/").splice(1, 2);
 
@@ -18,14 +21,7 @@ export default function FilteredPokemon() {
   });
 
   if (filterRequest.isLoading) {
-    return (
-      <div class="lds-ring">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    );
+    return <LoadingAnimation />;
   }
 
   const pokemonList =
@@ -35,8 +31,13 @@ export default function FilteredPokemon() {
 
   return (
     <>
+      {showModal === true ? <DetailsModal /> : ""}
       <div className="nav-bar">
-        <Link to={"/"} style={{ textDecoration: "none", color: "#fff" }}>
+        <Link
+          to={"/"}
+          style={{ textDecoration: "none", color: "#fff" }}
+          onClick={() => setSearchKeyword("")}
+        >
           <h1>Pokédex</h1>
         </Link>
       </div>
