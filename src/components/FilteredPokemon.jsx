@@ -13,7 +13,7 @@ export default function FilteredPokemon() {
   const { pokemonDetails, setSearchKeyword, searchKeyword, showModal } =
     useContext(PokemonContext);
   const location = useLocation();
-  const filterType = location.pathname.split("/").splice(1, 2);
+  const filterType = location.pathname.split("/").splice(2, 2);
 
   const filterRequest = useQuery({
     queryKey: ["pokemon-filter", filterType[1]],
