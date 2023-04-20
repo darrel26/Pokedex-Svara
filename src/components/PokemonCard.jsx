@@ -31,7 +31,7 @@ export default function PokemonCard({ pokemonName, pokemonUrl }) {
     >
       <img
         src={
-          location === "/profile"
+          location === "/Pokedex-Svara/profile"
             ? pokemonUrl
             : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
                 pokemonUrl.split("/")[6]
